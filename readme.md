@@ -1,20 +1,28 @@
-**config.json** should not be shared or committed. :)
+# GPT Gym Workout Tracker
 
-**setup.sql** setups the database.
+This project demonstrates an AI-powered natural language interface to a gym workout and progress tracking database.
 
-**db_bot.py** initializes the database, connects to openai, provides prompts and questions.
+## Project Structure
 
-**strategies** attempting to try out the three strategies “zero-shot, single-domain, and cross-domain” as outlined in this paper: https://arxiv.org/abs/2305.11853 <- read it 😊
+- **setup.sql**  
+  Sets up the SQLite database schema for users, workouts, exercises, programs, and gym locations.
 
-**responses_\<strategy>_\<time>.json** records the provided prompts and questions, as well as the generated SQL queries and responses.
+- **setupData.sql**  
+  Seeds the database with sample data for users, locations, workouts, programs, exercises, and progress metrics.
 
-**description** This database represents the mock data to manage an upcoming dogshow.
+- **db_bot.py**  
+  Initializes the database, connects to OpenAI, and handles generating prompts, querying the database, and returning friendly natural language responses.
 
-<a href="sample_post.md">**sample_post.md**</a> is a sample report of the data in this effort.
+- **strategies**  
+  The code experiments with several prompting strategies ("zero-shot", "few-shot", "chain-of-thought", etc.), inspired by ideas from [this research paper](https://arxiv.org/abs/2305.11853).
 
-<a href="schema.png">schema.png</a> is a sample schema. Can you identify where foreign keys should exist but are not explicitly defined 😊? This was created from the sqlite database via <a href="https://www.google.com/search?q=install+schemacrawler">schemacrawler</a>:
-```
-schemacrawler --server sqlite --database .\aidb.sqlite --command=schema --output-file=./schema.png --info-level=standard
-```
+- **response_\<strategy>_\<time>.json**  
+  These files record all prompts, generated SQL queries, and friendly responses for each strategy and question.
 
+- **[sample_post.md](sample_post.md)**  
+  A report showing sample questions, SQL queries, results, and project findings.
 
+- **[schema.png](schema.png)**  
+  A schema diagram of the database.  
+  _Tip: Can you spot where the foreign keys are defined?_  
+  Created from the SQLite database using [schemacrawler](https://www.google.com/search?q=install+schemacrawler):
