@@ -24,5 +24,13 @@ This project demonstrates an AI-powered natural language interface to a gym work
 
 - **[schema.png](schema.png)**  
   A schema diagram of the database.  
-  _Tip: Can you spot where the foreign keys are defined?_  
-  Created from the SQLite database using [schemacrawler](https://www.google.com/search?q=install+schemacrawler):
+  created using [drawSQL](https://drawsql.app/).
+
+  ---
+
+## Description
+
+This database models a gym workout and progress tracking system.  
+It represents users, workouts, exercises, gym locations, workout programs, and user progress metrics for fitness enthusiasts.
+
+---
